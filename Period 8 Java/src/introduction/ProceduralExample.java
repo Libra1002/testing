@@ -7,6 +7,7 @@ public static void main(String[]args){
   //System.out.println("Good Day");
  
 	String[] names={"Jillian", "Joseph", "Jordan"};
-	System.out.println("Hi, ny name is "+names[0]+ ".");
+	String[] years={"Freshman", "Sophomore", "Junior", "Senior"};
+	System.out.println("Hi, ny name is "+names[0]+ ". I am in my " +years[0]+ " year.");
   }
 }
