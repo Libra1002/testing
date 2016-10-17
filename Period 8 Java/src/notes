@@ -1,0 +1,6 @@
+Primitive types are "already" in the system, start as zero, cannot mix types
+
+objects are usually null by default until intialized
+they are different types of objects in an array of a common superclass 
+
+pass-by-value -> does not change value, only changes assignment of variable 
