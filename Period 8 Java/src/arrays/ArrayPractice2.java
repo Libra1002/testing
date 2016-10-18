@@ -7,6 +7,74 @@ public class ArrayPractice2 {
 		//how do you time a process
 		long currentTime = System.currentTimeMillis();initializingArraysExample();
 		
+		int[] fiftyNumbers = new int[50];
+		populate(fiftyNumbers);
+		print(fiftyNumbers);
+		randomize(fiftyNumbers,50);
+		print(fiftyNumbers);
+		rollDice(fiftyNumbers,2);
+		print(fiftyNumbers);
+		countResult(fiftyNumbers,3);
+		print(fiftyNumbers);
+		long endTime = System.currentTimeMillis();
+		System.out.println("The process took " + (endTime - currentTime) + " milliseconds.");
+
+	}
+	
+	private static void populate(int[] nums) 
+	{
+		System.out.println("populate");
+		for (int i = 0; i < nums.length; i++)
+		{
+			nums[i] = i+1;
+		}
+	}
+	
+	private static void randomize(int[] nums,int max) 
+	{
+		System.out.println("Random");
+		for (int i = 0; i<nums.length; i++)
+		{
+			int randomNumber = (int) (1+(max*Math.random()));
+			nums[i] = randomNumber;
+		}
+	}
+
+	private static void rollDice(int[] nums, int numOfDice)
+	{
+		System.out.println("Random Dice");
+		for(int i = 0; i < nums.length; i++)
+		{
+			int dice = 0;
+			for(int j = 0; j < numOfDice; j++)
+			{
+				dice = dice + (int)(1+6*Math.random());
+			}
+			nums[i] = dice;
+		}
+	}
+	
+	private static void countResult(int[] nums, int numOfDice) 
+	{
+		System.out.println("Count Result");
+		int counter[] = new int[numOfDice*6];
+		for(int n:nums)
+		{
+			counter[n-1] = counter [n-1]+1;
+		}
+		
+	}
+
+	private static void print(int[] nums)
+	{
+		for (int i = 0; i < nums.length; i++)
+		{
+			System.out.println(nums[i]);
+		}
+	}
+	
+	private void demonstratePassByValue()
+	{
 		int x = 10;
 		increase(x);
 		System.out.println(x);
@@ -16,12 +84,8 @@ public class ArrayPractice2 {
 		String s = someStrings[999];
 		makeSpecial(s);
 		print(someStrings);
-		
-		long endTime = System.currentTimeMillis();
-		System.out.println("The process took " + (endTime - currentTime) + " milliseconds.");
-
 	}
-
+	
 	private static void increase(int i) 
 	{
 		i++;
@@ -30,6 +94,7 @@ public class ArrayPractice2 {
 	private static void makeSpecial(String s) 
 	{
 		s = "This string is.... special?";
+		
 	}
 
 	private static void print(String[] s) 
@@ -43,6 +108,10 @@ public class ArrayPractice2 {
 
 	private static void standardPopulate(String[] s) 
 	{
+		for (int i = 0; i<s.length;i++)
+		{
+			s[i] = "String #" +i;
+		}
 		/*changes everything to null
 		int i = 0;
 		for (String x: s)
