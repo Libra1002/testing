@@ -49,8 +49,8 @@ public class ArrayPractice2 {
 			for(int j = 0; j < numOfDice; j++)
 			{
 				dice = dice + (int)(1+6*Math.random());
+				nums[i] = dice;
 			}
-			nums[i] = dice;
 		}
 	}
 	
@@ -60,8 +60,13 @@ public class ArrayPractice2 {
 		int counter[] = new int[numOfDice*6];
 		for(int n:nums)
 		{
-			counter[n-1] = counter [n-1]+1;
+			counter[n-1] = counter [n-1] + 1;
+			
 		}
+		 /*for (int i = numOfDice-1;i<counter.length;i++)
+		{
+			System.out.println(i+1 + "was rolled");
+		}*/
 		
 	}
 
