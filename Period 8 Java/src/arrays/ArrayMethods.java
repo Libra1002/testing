@@ -1,9 +1,10 @@
 package arrays;
 public class ArrayMethods {
 
+	static double[] example = {3,5,6,7,10,12};
     public static void main(String[] args) 
     {
-    
+    	getStats(example);
      /**
       * IMPORTANT NOTE: 
       * This homework assignment will be weighted 4x.
@@ -51,24 +52,23 @@ public class ArrayMethods {
         /**
          * This method takes an in array as a parameter and returns 'true' if the array is already sorted in DESCENDING order
          * */
-    	boolean inLoop = true;
-        boolean sorted = false;
-        while(inLoop)
-        {
-        	for (int i = 1; i < array.length; i++)
-        	{
-        		if (array[i] > array[i + 1])
-        		{
-        			sorted = true;
-        		}
-        		else
-        			{
-        				sorted = false;
-        				inLoop = false;	
-        			}
-        	}
-        }
-		return false;
+     	boolean inLoop = true;
+         boolean sorted = false;
+         while(inLoop)
+         {
+         	for (int i = 1; i < array.length; i++)
+         	{
+         		if (array[i] > array[i + 1])
+         		{
+         			sorted = true;
+         		}
+         		else
+         			{         				sorted = false;
+         				inLoop = false;	
+         			}
+         	}
+         }
+ 		return false;
     }
     
     public static double[] getStats(double[] array)
@@ -95,21 +95,27 @@ public class ArrayMethods {
          for(int i = 0; i < array.length; i++)
          {
         	 mean = (int) (array[i] + mean);
-        	 //max method
+        	
+         }
+         mean = (int) (mean/array.length);
+         
+         //max method
+    	 
+         
+         for(int i = 0; i < array.length; i++)
+         {
         	 max = (int) array[i];
+        	 min = (int) array[i];
         	 if(array [i + 1] > max)
         	 {
         		 max = (int) (array[i + 1]);
         	 }
         	 //min method
-        	 min = (int) array[i];
-        	 if(array[i + 1] < min)
-        	 {
-        		 min = (int) (array[i + 1]);
-        	 }
+    	 	if(array[i + 1] < min)
+    	 	{
+    	 		min = (int) (array[i + 1]);
+    	 	}
          }
-         mean = (int) (mean/array.length);
-        
          /*median method
          if (array[array.length/2] != integer )
          {
@@ -136,6 +142,7 @@ public class ArrayMethods {
          stats[3] = median;
          stats[4] = greaterThanMean;
          stats[5] = lessThanMean;
+         System.out.println(stats);
          return stats;
     }
     
@@ -168,7 +175,7 @@ public class ArrayMethods {
     					swap(i,j);
     				}
     		}
-    	} 
+    	}
     }
     
     private static void swap(int i, int j) 
@@ -215,26 +222,26 @@ public class ArrayMethods {
          * longestSequence({0,9,10,11,4,3,8,9}) returns '3', since '9,10,11' is 3 integers long
          * longestSequence({0,9,8,11,4,3,7,9}) returns '1', since there are no consecutive integers
          * */
-    	int currentSequence = 1;
-    	int longestSequence = 0;
-        for (int i = 0; i < array1.length; i++)
-        {
-        	if (array1[i] + 1 == array1[i+1])
-        	{
-        		currentSequence++;
-        	}
-        	else
-        		{
-        			if(currentSequence > longestSequence)
-        			{
-        				longestSequence = currentSequence;
-        				currentSequence = 1;
-        			}
-        		}
+     	int currentSequence = 1;
+     	int longestSequence = 0;
+         for (int i = 0; i < array1.length; i++)
+         {
+         	if (array1[i] + 1 == array1[i+1])
+         	{
+         		currentSequence++;
+         	}
+         	else
+         		{
+         			if(currentSequence > longestSequence)
+         			{
+         				longestSequence = currentSequence;
+         				currentSequence = 1;
+         			}
+         		}
      
-        }
-        return longestSequence;
-    }
+         }
+         return longestSequence;
+     }
 
     public static int longestSharedSequence(int[] array1, int[] array2)
     {
@@ -248,37 +255,57 @@ public class ArrayMethods {
          *          since the sequence '9,6,3,4,3' is in both arrays and is 5 integers long, it doesn't matter that the sequence begins at different indices 
          * longestSequence({9,6,1,4,3,6,7,9}, {9,6,5,8,3,6,7,0}) returns '3', since the sequence '3,6,7' is in both arrays and is 3 integers long
          * */
-        int max = 0;
-        int count = 0;
-        for (int seqStart = 0; seqStart < array1.length; seqStart++)
-        {
-        	int seqEnd = seqStart;
-        	int[] seq = getSequence(seqStart, seqEnd, array1);
-        	if(checkSequence(seq,array2))
-        	{
-        		count++;
-        		if (count>max)
-        		{
-        			max = count;
-        		}
-        	}
-        	count = 0;
-        }
+         int max = 0;
+         int count = 0;
+         for (int seqStart = 0; seqStart < array1.length; seqStart++)
+         {
+         	int seqEnd = seqStart;
+         	int[] seq = getSequence(seqStart, seqEnd, array1);
+         	if(checkSequence(seq,array2))
+         	{
+         		count++;
+         		if (count>max)
+         		{
+         			max = count;
+         		}
+         	}
+         	count = 0;
+         }
     	
-        return max;
+         return max;
     }
     //returns true if sequence is found in array 2
-    private static boolean checkSequence(int[] seq, int[] array2) 
-    {
-		return false;
-	}
+     private static boolean checkSequence(int[] seq, int[] arr) 
+     {
+     	for(int i = 0;i < arr.length; i++)
+     	{
+    		for(int j = 0; j < seq.length;j++)
+     		{
+     			if (j+1<arr.length &&seq[j] != arr[j+i])
+     			{
+     				//breaks out of inner-most for loop unless particular for loop is specified
+     				// you can specify each forloop with A: or B:
+    				
+    				break;
+     			}
+     			else
+     				{
+     					if(j == seq.length-1)
+     					{
+     						return true;
+    					}
+     				}
+     		}
+     	}
+ 		return false;
+ 	}
 
-	//returns a sub-array containing the elements in array1 from seqStart to seqEnd
-    private static int[] getSequence(int seqStart, int seqEnd, int[] array1)
-    {
+ 	//returns a sub-array containing the elements in array1 from seqStart to seqEnd
+     private static int[] getSequence(int seqStart, int seqEnd, int[] array1)
+     {
 		
-		return null;
-	}
+ 		return null;
+ 	}
 
 	public static int[] generateDistinctItemsList(int n)
     {
@@ -289,7 +316,14 @@ public class ArrayMethods {
          * contains only entries between 1 and 2n (inclusive) and has no duplicates
          * 
          * */
-        return null; 
+        int lowerLimit = 1;
+        int upperLimit = 2 * n;
+        int random[] = new int[n];
+        for (int i = 0; i < random.length; i++)
+        {
+        	random[i] = (int) Math.random()* lowerLimit + upperLimit;
+        }
+        return random; 
     }
     
     public static void cycleThrough(int[] array, int n)
@@ -317,7 +351,7 @@ public class ArrayMethods {
          * For extra credit, make your method handle NEGATIVE n
          * */
     	
-    }
+    } 
     
 
 }
