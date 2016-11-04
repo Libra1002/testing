@@ -20,12 +20,12 @@ public class TwoDArraysIntro
 				arr2D[row][col] = "(" + row + ", " + col + ")";
 			}
 		}
-		starti = 2;
-		startj = 2;
-		treasurei = 4;
-		treasurej = 3;
-		
-		startExploring();
+//		starti = 2;
+//		startj = 2;
+//		treasurei = 4;
+//		treasurej = 3;
+		giantGrid();
+		//startExploring();
 	}
 	private static void startExploring() 
 	{
@@ -86,23 +86,32 @@ public class TwoDArraysIntro
 	private static void giantGrid() 
 	{	
 		
-		String pic [][] = new String[12][16];
+		String pic [][] = new String[12][17];
 		for(int row = 0; row < pic.length; row++)
 		{
 			pic[row][0] = "|";
+			pic[row][1] = " ";
 			pic[row][2] = "|";
+			pic[row][3] = " ";
 			pic[row][4] = "|";
+			pic[row][5] = " ";
 			pic[row][6] = "|";
+			pic[row][7] = " ";
 			pic[row][8] = "|";
+			pic[row][9] = " ";
 			pic[row][10] = "|";
+			pic[row][11] = " ";
 			pic[row][12] = "|";
+			pic[row][13] = " ";
 			pic[row][14] = "|";
+			pic[row][15] = " ";
+			pic[row][16] = "|";
 		}
 		for(int col = 0; col < pic[0].length;col++)
 		{
-			pic[3][col] = "__";
-			pic[7][col] = "__";
-			pic[11][col] = "__";
+			pic[3][col] = "-";
+			pic[7][col] = "-";
+			pic[11][col] = "-";
 		}
 		printPic(pic);
 		
