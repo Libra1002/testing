@@ -31,26 +31,34 @@ public class InventorySomeone
 		for(CaveRoomPd8[] row : caves)
 		{
 			//3 rows of text
-			for(int textRow = 0; textRow<3;textRow++)
+			for(int textRow = 0; textRow < 3;textRow++)
 			{
 				//text for each room
 				for(CaveRoomPd8 cr : row)
 				{
 					String str = "|   ";
 					String contents = cr.getContents();
-					if(textRow == 1 && cr.getDoor(CaveRoomPd8.WEST)!= null)
+					if(textRow == 1)
 					{
-						str = "  "+contents+" ";
-					}
-					else if(textRow == 2)
-					{
-						if(cr.getDoor(CaveRoomPd8.SOUTH) != null)
+						if(cr.getDoor(CaveRoomPd8.WEST)!= null && cr.getDoor(CaveRoomPd8.WEST).isOpen())
 						{
-							str = "|___";
+							str = "  "+contents+" ";
 						}
 						else
 						{
+							str = "| " + contents + " ";
+						}
+					}
+					
+					else if(textRow == 2)
+					{
+						if(cr.getDoor(CaveRoomPd8.SOUTH) != null && cr.getDoor(CaveRoomPd8.SOUTH).isOpen())
+						{
 							str = "|_ _";
+						}
+						else
+						{
+							str = "|___";
 						}
 					}
 				}
