@@ -1,11 +1,14 @@
 package sorting;
 
+import java.lang.reflect.Array;
+
 public class RecursionIntro 
 {
 	public static void main(String[] args)
 	{
 		int n = 40;
 		System.out.println("The "+n+"th Fibonacci number is "+fibonacci(n));
+		
 //		hanoiSolution(7,"A","B","C");
 //		System.out.println("Using a for loop");
 //		for(int i = 0; i < 5; i++)
@@ -25,6 +28,23 @@ public class RecursionIntro
 //		System.out.println("For loop factorial");
 //		System.out.println("10! = " + factorial(10));
 //		
+	}
+	private static void insertionSort(int[] x)
+	{
+		for (int i = 0; i < x.length; i++)
+		{
+			for (int j = 0; j < i; j++)
+			{
+				while(j>0 && x[j-1] > x[j])
+				{
+					int holder = x[j-1];
+					x[j-1] = x[j];
+					x[j] = holder;
+					break;
+				}
+				break;
+			}
+		}
 	}
 	private static int fibonacci(int n) 
 	{
