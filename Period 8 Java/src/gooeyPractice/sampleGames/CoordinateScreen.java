@@ -1,10 +1,10 @@
-package guiPractice.sampleGames;
+package gooeyPractice.sampleGames;
 
 import java.util.ArrayList;
 
-import gooey.Screen;
-import guiPractice.components.TextLabel;
-import guiPractice.components.Visible;
+import gooeyPractice.Screen;
+import gooeyPractice.components.TextLabel;
+import gooeyPractice.components.Visible;
 
 
 public class CoordinateScreen extends Screen 

@@ -1,7 +1,7 @@
-package guiPractice.sampleGames;
+package gooeyPractice.sampleGames;
 
-import gooey.GUIApplication;
-import gooey.Screen;
+import gooeyPractice.GUIApplication;
+import gooeyPractice.Screen;
 
 public class TheBlankScreenGame extends GUIApplication
 {

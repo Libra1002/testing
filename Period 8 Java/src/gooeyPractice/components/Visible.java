@@ -1,4 +1,4 @@
-package guiPractice.components;
+package gooeyPractice.components;
 
 import java.awt.image.BufferedImage;
 

@@ -1,4 +1,4 @@
-package gooey;
+package gooeyPractice;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -7,7 +7,7 @@ import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
-import guiPractice.components.*;
+import gooeyPractice.components.*;
 
 public abstract class Screen 
 {
@@ -22,6 +22,7 @@ public abstract class Screen
 		viewObjects = new ArrayList<Visible>();
 		this.width = width;
 		this.height = height;
+		initObjects(viewObjects);
 		initImage();
 	}
 	public abstract void initObjects(ArrayList<Visible> viewObjects);

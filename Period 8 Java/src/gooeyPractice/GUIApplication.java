@@ -1,4 +1,4 @@
-package gooey;
+package gooeyPractice;
 
 import java.awt.Graphics;
 

@@ -1,6 +1,6 @@
-package guiPractice.sampleGames;
+package gooeyPractice.sampleGames;
 
-import gooey.Screen;
+import gooeyPractice.Screen;
 
 public class BlankScreen extends Screen 
 {
