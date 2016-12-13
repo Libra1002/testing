@@ -1,16 +1,20 @@
 package gooeyPractice.sampleGames;
 
-import gooeyPractice.Screen;
+import java.util.ArrayList;
 
-public class BlankScreen extends Screen 
-{
-	public BlankScreen(int width, int height) 
-	{
+import gooeyPractice.Screen;
+import gooeyPractice.components.Visible;
+
+public class BlankScreen extends Screen {
+
+	public BlankScreen(int width, int height) {
 		super(width, height);
 	}
 
-	public static void main(String[] args) 
-	{
-	
+	@Override
+	public void initObjects(ArrayList<Visible> viewObjects) {
+		// TODO Auto-generated method stub
+		
 	}
+
 }
