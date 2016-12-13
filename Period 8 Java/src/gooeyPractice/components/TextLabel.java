@@ -22,14 +22,17 @@ public class TextLabel extends Component {
 
 	public void setText(String s){
 		this.text = s;
+		update();
 	}
 
 	public void setSize(int size){
 		this.size = size;
+		update();
 	}
 
 	public void setFont(String font){
 		this.font = font;
+		update();
 	}
 
 
@@ -47,11 +50,13 @@ public class TextLabel extends Component {
 	}
 
 	@Override
-	public void update(Graphics2D g) {
-		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
-				RenderingHints.VALUE_ANTIALIAS_ON);
+	public void update(Graphics2D g) 
+	{
+		g = clear();
+		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 		g.setColor(Color.black);
-		if(text != null){
+		if(text != null)
+		{
 			g.setFont(new Font(font,Font.PLAIN,size));
 			g.drawString(text, 4, getHeight()-5);
 		}
