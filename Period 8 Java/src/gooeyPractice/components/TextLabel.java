@@ -48,7 +48,7 @@ public class TextLabel extends Component {
 	public int getSize() {
 		return size;
 	}
-
+	
 	@Override
 	public void update(Graphics2D g) 
 	{
