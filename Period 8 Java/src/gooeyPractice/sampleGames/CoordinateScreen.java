@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import gooeyPractice.Screen;
 import gooeyPractice.components.Action;
 import gooeyPractice.components.Button;
+import gooeyPractice.components.Graphic;
 import gooeyPractice.components.TextArea;
 import gooeyPractice.components.TextLabel;
 import gooeyPractice.components.Visible;
@@ -36,6 +37,8 @@ public class CoordinateScreen extends Screen implements MouseMotionListener
 				
 			}
 		});
+		Graphic picture = new Graphic(50,50,"sampleImages/gnar.jpg");
+		viewObjects.add(picture);
 		viewObjects.add(label);
 		viewObjects.add(paragraph);
 		viewObjects.add(button);
