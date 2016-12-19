@@ -23,6 +23,12 @@ public abstract class GUIApplication extends JFrame implements Runnable
 /**
  * method for creating and setting the starting screen
  */
+	 public static void main(String[] args)
+	 {
+		 
+	  
+	 }
+	 
 	protected abstract void initScreen();
 
 	public void setScreen(Screen screen)

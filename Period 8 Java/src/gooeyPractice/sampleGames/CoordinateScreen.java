@@ -2,6 +2,7 @@ package gooeyPractice.sampleGames;
 
 import java.awt.Color;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
@@ -13,7 +14,7 @@ import gooeyPractice.components.TextArea;
 import gooeyPractice.components.TextLabel;
 import gooeyPractice.components.Visible;
 
-public class CoordinateScreen extends Screen implements MouseMotionListener
+public class CoordinateScreen extends Screen implements MouseMotionListener,MouseListener
 {
 	private TextLabel label;
 	private TextArea paragraph;
@@ -37,7 +38,7 @@ public class CoordinateScreen extends Screen implements MouseMotionListener
 				
 			}
 		});
-		Graphic picture = new Graphic(50,50,"sampleImages/gnar.jpg");
+		Graphic picture = new Graphic(50,50,.5,"resources/sampleImages/gnar.jpg");
 		viewObjects.add(picture);
 		viewObjects.add(label);
 		viewObjects.add(paragraph);
@@ -57,5 +58,30 @@ public class CoordinateScreen extends Screen implements MouseMotionListener
 	public MouseMotionListener getMouseMotionListener()
 	{
 		return this;
+	}
+	@Override
+	public void mouseClicked(MouseEvent arg0) 
+	{
+		
+	}
+	@Override
+	public void mouseEntered(MouseEvent arg0) 
+	{
+		
+	}
+	@Override
+	public void mouseExited(MouseEvent arg0) 
+	{
+		
+	}
+	@Override
+	public void mousePressed(MouseEvent arg0) 
+	{
+		
+	}
+	@Override
+	public void mouseReleased(MouseEvent arg0) 
+	{
+		
 	}
 }

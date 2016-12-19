@@ -5,9 +5,12 @@ import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
-public class Button extends TextLabel implements Clickable
+public class Button extends TextLabel implements MouseListener
 {
+
 	private Color color;
 	private Action action;
 	
@@ -18,7 +21,6 @@ public class Button extends TextLabel implements Clickable
 		this.action = action;
 		update();
 	}
-	
 	public Color getColor()
 	{
 		return color;
@@ -34,37 +36,55 @@ public class Button extends TextLabel implements Clickable
 		g.setColor(color);
 		g.fillRoundRect(0, 0, getWidth(), getHeight(), 35, 25);
 		g.setColor(Color.black);
-		g.drawRoundRect(0, 0,getWidth()-1,getHeight()-1,35,25);
+		g.drawRoundRect(0, 0, getWidth()-1, getHeight()-1, 35, 25);
 		g.setFont(new Font(getFont(),Font.PLAIN,getSize()));
 		FontMetrics fm = g.getFontMetrics();
 		
-		if(getText() != null)
+		if(getText()!= null)
 		{
 			g.setColor(Color.white);
 			String t = getText();
+			//just in case text is too wide, cut off
 			int cutoff = t.length();
 			while(cutoff > 0 && fm.stringWidth(t) > getWidth())
 			{
 				cutoff --;
-				t = t.substring(0, cutoff);
+				t = t.substring(0,cutoff); 
 			}
-			g.drawString(t,(getWidth()-fm.stringWidth(t))/2,(getHeight()+fm.getHeight()-fm.getDescent())/2);
+			g.drawString(t, (getWidth()-fm.stringWidth(t))/2, (getHeight()+fm.getHeight()-fm.getDescent())/2);
 		}
-		g.drawRoundRect(getX(), getY(), getWidth(), getHeight(), 30, 30);
-		g.fillRoundRect(getX(), getY(), getWidth(), getHeight(), 30, 30);
 	}
-
-	@Override
 	public boolean isHovered(int x, int y) 
 	{
-		
-		return false;
+		return x > getX() && x < getX() + getWidth() && y > getY() && y < getY() + getHeight();
 	}
-
+	public void act()
+	{
+		action.act();
+	}
 	@Override
-	public void act() 
+	public void mouseClicked(MouseEvent e) 
 	{
 		
 	}
-
+	@Override
+	public void mouseEntered(MouseEvent arg0) 
+	{
+		
+	}
+	@Override
+	public void mouseExited(MouseEvent arg0)
+	{
+		
+	}
+	@Override
+	public void mousePressed(MouseEvent arg0) 
+	{
+		
+	}
+	@Override
+	public void mouseReleased(MouseEvent arg0) 
+	{
+		
+	}
 }
