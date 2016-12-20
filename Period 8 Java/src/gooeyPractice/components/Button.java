@@ -65,7 +65,7 @@ public class Button extends TextLabel implements MouseListener
 	@Override
 	public void mouseClicked(MouseEvent e) 
 	{
-		
+
 	}
 	@Override
 	public void mouseEntered(MouseEvent arg0) 

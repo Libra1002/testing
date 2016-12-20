@@ -35,7 +35,7 @@ public class CoordinateScreen extends Screen implements MouseMotionListener,Mous
 		button = new Button(40,200,80,40,"Button", new Color(100,100,250), new Action(){
 			public void act()
 			{
-				
+				MouseFollower.game.setScreen(MouseFollower.myScreen);
 			}
 		});
 		Graphic picture = new Graphic(50,50,.5,"resources/sampleImages/gnar.jpg");
@@ -60,9 +60,12 @@ public class CoordinateScreen extends Screen implements MouseMotionListener,Mous
 		return this;
 	}
 	@Override
-	public void mouseClicked(MouseEvent arg0) 
+	public void mouseClicked(MouseEvent e) 
 	{
-		
+		if(button.isHovered(e.getX(),e.getY()))
+		{
+			button.act();
+		}
 	}
 	@Override
 	public void mouseEntered(MouseEvent arg0) 

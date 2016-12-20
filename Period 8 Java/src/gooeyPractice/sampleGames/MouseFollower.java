@@ -4,8 +4,8 @@ import gooeyPractice.GUIApplication;
 
 public class MouseFollower extends GUIApplication 
 {
-	private CoordinateScreen coordScreen;
-	
+	public static CoordinateScreen coordScreen;
+	public static MouseFollower game;
 	public static MyScreen myScreen;
 	
 	public static void main(String[] args)
