@@ -1,4 +1,4 @@
-package gooeyPractice.components;
+package GUIPractice.components;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
@@ -35,60 +35,59 @@ public class Graphic implements Visible {
 	}
 	private void loadImages(String imageLocation, int w, int h) 
 	{
-		try
-		{
+		try{
 			ImageIcon icon = new ImageIcon(imageLocation);
-			
-			if(w == 0 && h ==0)
+			if(w == 0 && h==0)
 			{
 				//use original size
-				image = new BufferedImage(icon.getIconWidth(),icon.getIconHeight(),BufferedImage.TYPE_INT_ARGB);
+				image = new BufferedImage(icon.getIconWidth(),
+						icon.getIconHeight(),
+						BufferedImage.TYPE_INT_ARGB);
 				//draw icon onto image
 				Graphics2D g = image.createGraphics();
 				g.drawImage(icon.getImage(), 0, 0, null);
-			}
-			else
+						
+			}else
 			{
-				//custom size
-				image = new BufferedImage(w,h,BufferedImage.TYPE_INT_ARGB);
+				//use custom size
+				image = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
 				Graphics2D g = image.createGraphics();
-				/**	select coordinates of top
-				 * left rectangle within image
-				 * then select width and height to 
-				 * display graphic
-				 * THEN of the you want to display
-				 * select x, y coordinates and with height
-				 * this can split in image into parts
-				 */
-				g.drawImage(icon.getImage(),0, 0,w,h,0,0,icon.getIconWidth(),icon.getIconHeight(), null);
+				//select coordinates of top 
+				//left rectangle within image
+				//then select width and height to 
+				//display graphic
+				//THEN of teh icon you want to display
+				//select x,y coordinates and width height
+				//this can split an image into parts
+				g.drawImage(icon.getImage(), 0, 0, w,h,0,0, icon.getIconWidth(),icon.getIconHeight(), null);
 			}
 			loadedImages = true;
-		}
-		catch(Exception e)
+		}catch(Exception e)
 		{
+			//in case file is not found
 			e.printStackTrace();
 		}
 	}
 
 	private void loadImages(String imageLocation, double scale) 
 	{
-		try
-		{
+		try{
+			//get the image from file (FULL SIZE)
 			ImageIcon icon = new ImageIcon(imageLocation);
 			
 			int newWidth = (int)(icon.getIconWidth() * scale);
 			int newHeight = (int)(icon.getIconHeight() * scale);
-			image = new BufferedImage(newWidth,newHeight,BufferedImage.TYPE_INT_ARGB);
+			image = new BufferedImage(newWidth, newHeight, BufferedImage.TYPE_INT_ARGB);
 			Graphics2D g = image.createGraphics();
-			g.drawImage(icon.getImage(),0,0, newWidth, newHeight,0,0,icon.getIconWidth(),icon.getIconHeight(), null);
+			g.drawImage(icon.getImage(),0,0,newWidth,newHeight,0,0,icon.getIconWidth(), icon.getIconHeight(),null); 
 			
 			loadedImages = true;
-		}
-		catch(Exception e)
-		{
+		}catch(Exception e){
+			//in case file is not found
 			e.printStackTrace();
 		}
 	}
+	
 
 	@Override
 	public BufferedImage getImage() 

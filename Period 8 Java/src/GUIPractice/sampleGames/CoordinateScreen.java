@@ -1,4 +1,4 @@
-package gooeyPractice.sampleGames;
+package GUIPractice.sampleGames;
 
 import java.awt.Color;
 import java.awt.event.MouseEvent;
@@ -6,13 +6,13 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
-import gooeyPractice.Screen;
-import gooeyPractice.components.Action;
-import gooeyPractice.components.Button;
-import gooeyPractice.components.Graphic;
-import gooeyPractice.components.TextArea;
-import gooeyPractice.components.TextLabel;
-import gooeyPractice.components.Visible;
+import GUIPractice.Screen;
+import GUIPractice.components.Action;
+import GUIPractice.components.Button;
+import GUIPractice.components.Graphic;
+import GUIPractice.components.TextArea;
+import GUIPractice.components.TextLabel;
+import GUIPractice.components.Visible;
 
 public class CoordinateScreen extends Screen implements MouseMotionListener,MouseListener
 {

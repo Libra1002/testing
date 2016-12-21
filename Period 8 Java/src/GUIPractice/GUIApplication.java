@@ -1,4 +1,4 @@
-package gooeyPractice;
+package GUIPractice;
 
 import java.awt.Graphics;
 

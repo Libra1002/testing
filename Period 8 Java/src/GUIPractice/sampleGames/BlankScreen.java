@@ -1,9 +1,9 @@
-package gooeyPractice.sampleGames;
+package GUIPractice.sampleGames;
 
 import java.util.ArrayList;
 
-import gooeyPractice.Screen;
-import gooeyPractice.components.Visible;
+import GUIPractice.Screen;
+import GUIPractice.components.Visible;
 
 public class BlankScreen extends Screen {
 

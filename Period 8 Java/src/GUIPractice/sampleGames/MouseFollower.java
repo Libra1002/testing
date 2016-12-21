@@ -1,16 +1,17 @@
-package gooeyPractice.sampleGames;
+package GUIPractice.sampleGames;
 
-import gooeyPractice.GUIApplication;
+import GUIPractice.GUIApplication;
 
 public class MouseFollower extends GUIApplication 
 {
 	public static CoordinateScreen coordScreen;
 	public static MouseFollower game;
 	public static MyScreen myScreen;
+	public static GraphicsClickScreen move;
 	
 	public static void main(String[] args)
 	{
-		GUIApplication game = new MouseFollower();
+		game = new MouseFollower();
 		Thread app = new Thread(game);
 		app.start();
 	}

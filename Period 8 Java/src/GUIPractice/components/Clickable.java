@@ -1,4 +1,4 @@
-package gooeyPractice.components;
+package GUIPractice.components;
 
 public interface Clickable 
 {

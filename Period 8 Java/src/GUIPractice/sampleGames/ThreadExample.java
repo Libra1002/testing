@@ -1,4 +1,4 @@
-package gooeyPractice.sampleGames;
+package GUIPractice.sampleGames;
 
 public class ThreadExample implements Runnable
 {

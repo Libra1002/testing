@@ -1,4 +1,4 @@
-package gooeyPractice.components;
+package GUIPractice.components;
 
 import java.awt.Color;
 import java.awt.Font;

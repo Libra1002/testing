@@ -1,4 +1,4 @@
-package gooeyPractice;
+package GUIPractice;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -9,7 +9,7 @@ import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
-import gooeyPractice.components.Visible;
+import GUIPractice.components.Visible;
 
 public abstract class Screen {
 
@@ -27,13 +27,10 @@ public abstract class Screen {
 		initImage();
 	}
 
-	public abstract void 
-	     initObjects(ArrayList<Visible> viewObjects);
+	public abstract void initObjects(ArrayList<Visible> viewObjects);
 
 	private void initImage() {
-		image = new BufferedImage(width, 
-				height, 
-				BufferedImage.TYPE_INT_ARGB);
+		image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
 		update();
 	}
 

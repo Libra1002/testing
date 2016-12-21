@@ -1,9 +1,9 @@
-package gooeyPractice.components;
+package GUIPractice.components;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
-import gooeyPractice.components.Visible;
+import GUIPractice.components.Visible;
 
 public abstract class Component implements Visible 
 {
