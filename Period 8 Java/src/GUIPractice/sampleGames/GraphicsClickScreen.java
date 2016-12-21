@@ -18,15 +18,24 @@ public class GraphicsClickScreen extends Screen implements MouseListener
 		super(w,h);
 	}
 
-	public static void main(String[] args) 
+	@Override
+	public void initObjects(ArrayList<Visible> viewObjects) 
 	{
-		
-	}	
-	
+		picture = new ClickableGraphic(50,50, 0.25,"resources/sampleImages/megaGnar.jpg");
+		picture.setAction(new Action()
+				{
+					public void act()
+					{
+						picture.setX(picture.getX() + 10);
+					}
+				});
+		viewObjects.add(picture);
+	}
+
 	@Override
 	public void mouseClicked(MouseEvent e) 
 	{
-		
+	
 	}
 
 	@Override
@@ -55,20 +64,6 @@ public class GraphicsClickScreen extends Screen implements MouseListener
 	public MouseListener getMouseListener()
 	{
 		return this;
-	}
-
-	@Override
-	public void initObjects(ArrayList<Visible> viewObjects) 
-	{
-		picture = new ClickableGraphic(50,50,0.25,"resources/sampleImage/megaGnar.jpg");
-		picture.setAction(new Action()
-				{
-					public void act()
-					{
-						
-					}
-				});
-		
 	}
 	
 }

@@ -40,14 +40,13 @@ public class Graphic implements Visible {
 			if(w == 0 && h==0)
 			{
 				//use original size
-				image = new BufferedImage(icon.getIconWidth(),
-						icon.getIconHeight(),
-						BufferedImage.TYPE_INT_ARGB);
+				image = new BufferedImage(icon.getIconWidth(),icon.getIconHeight(),BufferedImage.TYPE_INT_ARGB);
 				//draw icon onto image
 				Graphics2D g = image.createGraphics();
 				g.drawImage(icon.getImage(), 0, 0, null);
 						
-			}else
+			}
+			else
 			{
 				//use custom size
 				image = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
@@ -99,14 +98,22 @@ public class Graphic implements Visible {
 	@Override
 	public int getX() 
 	{
-		
 		return x;
+	}
+
+	public void setX(int x) 
+	{
+		this.x = x;
+	}
+
+	public void setY(int y) 
+	{	
+		this.y = y;
 	}
 
 	@Override
 	public int getY() 
-	{
-		
+	{	
 		return y;
 	}
 

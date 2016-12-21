@@ -8,12 +8,18 @@ public class ClickableGraphic extends Graphic implements Clickable
 	{
 		super(x,y,w,h,imageLocation);
 	}
-	
+	public ClickableGraphic(int x, int y, double scale, String imageLocation)
+	{
+		super(x,y,scale,imageLocation);
+	}
+	public ClickableGraphic(int x, int y, String imageLocation)
+	{
+		super(x,y,imageLocation);
+	}
 	public void setAction(Action a)
 	{
 		this.action= a;
 	}
-	
 	
 	@Override
 	public boolean isHovered(int x, int y) 

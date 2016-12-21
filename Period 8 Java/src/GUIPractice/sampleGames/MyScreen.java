@@ -25,7 +25,7 @@ public class MyScreen extends Screen implements MouseMotionListener,MouseListene
 	@Override
 	public void initObjects(ArrayList<Visible> viewObjects) 
 	{
-		mega = new Graphic(200,200,.25,"resources/sampleImage/megaGnar.jpg");
+		mega = new Graphic(200,200,.25,"resources/sampleImages/megaGnar.jpg");
 		back = new Button(50,50,100,60,"Back",Color.GRAY,new Action()
 		{
 			public void act()
