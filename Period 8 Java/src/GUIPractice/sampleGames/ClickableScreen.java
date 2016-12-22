@@ -1,61 +1,96 @@
 package GUIPractice.sampleGames;
 
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
+import java.util.List;
 
 import GUIPractice.Screen;
+import GUIPractice.components.Clickable;
 import GUIPractice.components.Visible;
 
-public class ClickableScreen extends Screen implements MouseListener
+public abstract class ClickableScreen extends Screen implements MouseListener 
 {
 
-	public ClickableScreen(int w, int h) 
+	private ArrayList<Clickable> clickables;
+	
+	public ClickableScreen(int width, int height) 
 	{
-		super(w,h);
+		super(width, height);
+		// TODO Auto-generated constructor stub
+	}
+
+	public abstract void initAllObjects(List<Visible> viewObjects);
+	
+	public void initObjects(List<Visible> viewObjects) 
+	{
+		initAllObjects(viewObjects);
+		clickables = new ArrayList<Clickable>();
+		for(Visible v: viewObjects)
+		{
+			if(v instanceof Clickable)
+			{
+				clickables.add((Clickable)v);
+			}
+		}
+	}
+
+	public void mouseClicked(MouseEvent m) 
+	{
+		for(Clickable c: clickables)
+		{
+			if(c.isHovered(m.getX(), m.getY()))
+			{
+				c.act();
+				break;
+			}
+		}
 	}
 	
-	@Override
-	public void initObjects(ArrayList<Visible> viewObjects) 
-	{		
+	public void addObject(Visible v)
+	{
+		super.addObject(v);
+		if(v instanceof Clickable)
+		{
+			clickables.add((Clickable)v);
+		}
+	}
+	
+
+	
+	public void remove(Visible v)
+	{
+		super.remove(v);
+		clickables.remove(v);
+	}
+
+	
+	public void mouseEntered(MouseEvent arg0) 
+	{	
 		
 	}
 
-	@Override
-	public void mouseClicked(MouseEvent e) 
-	{		
+	public void mouseExited(MouseEvent arg0) 
+	{	
 		
 	}
 
-	@Override
-	public void mouseEntered(MouseEvent e) 
-	{		
+	public void mousePressed(MouseEvent arg0) 
+	{	
 		
 	}
 
-	@Override
-	public void mouseExited(MouseEvent e) 
-	{		
-		
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e) 
-	{		
-		
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) 
+	public void mouseReleased(MouseEvent arg0) 
 	{
 		
 	}
-	
-	@Override
+
 	public MouseListener getMouseListener()
 	{
 		return this;
 	}
-
 	
 }
