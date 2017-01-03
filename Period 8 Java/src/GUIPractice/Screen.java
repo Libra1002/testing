@@ -93,7 +93,16 @@ public abstract class Screen {
 		 *			i--;
 		 *		}
 		 *	}
+		 *ALSO CORRECT
+		 *for(int i = 0; i < list.sze;i++)
+		 *{
+		 *	while(i < list.size() && list.get(i) > 5)
+		 *	list.remove(i);
+		 *}
+		 *IF you remove an index, it returns the removed obect so you can do this
+		 *System.out.print(list.remove(0).toString()+" was removed" 
 		 */
+		
 		viewObjects.remove(v);
 		/**this removes the object that has the same identity as v, 
 		 *not an object that is equal to v
@@ -139,8 +148,14 @@ public abstract class Screen {
 	{	
 		return null;
 	}
-
-
+	public int getWidth()
+	{
+		return width;
+	}
+	public int getHeight()
+	{
+		return height;
+	}
 
 
 

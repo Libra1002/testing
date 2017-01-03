@@ -23,38 +23,30 @@ public abstract class GUIApplication extends JFrame implements Runnable
 /**
  * method for creating and setting the starting screen
  */
-	 public static void main(String[] args)
-	 {
-		 
-	  
-	 }
-	 
 	protected abstract void initScreen();
 
-	public void setScreen(Screen screen)
-	{
-		if(currentScreen != null)
-		{
-			if(currentScreen.getMouseListener() != null)
-			{
-				removeMouseListener(currentScreen.getMouseListener());
+	public void setScreen(Screen screen){
+		//stop controls from last Screen
+		if(currentScreen != null){
+			if(currentScreen.getMouseListener() != null){
+				removeMouseListener(
+						currentScreen.getMouseListener());
 			}
-		}
-		if(currentScreen != null)
-		{
-			if(currentScreen.getMouseMotionListener() != null)
-			{
-				removeMouseMotionListener(currentScreen.getMouseMotionListener());
+			if(currentScreen.getMouseMotionListener() != null){
+				removeMouseMotionListener(
+						currentScreen.getMouseMotionListener());
 			}
 		}
 		currentScreen = screen;
 		//add controls for new screen
-		if(currentScreen != null)
-		{
-			addMouseListener(currentScreen.getMouseListener());
-			addMouseMotionListener(currentScreen.getMouseMotionListener());
+		if(currentScreen != null){
+			addMouseListener(currentScreen.
+					getMouseListener());
+			addMouseMotionListener(currentScreen.
+					getMouseMotionListener());
 		}
-	}	
+	}
+	
 	public void paint(Graphics g)
 	{
 		g.drawImage(currentScreen.getImage(), 0, 0, null);

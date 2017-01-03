@@ -20,7 +20,6 @@ public abstract class ClickableScreen extends Screen implements MouseListener
 	public ClickableScreen(int width, int height) 
 	{
 		super(width, height);
-		// TODO Auto-generated constructor stub
 	}
 
 	public abstract void initAllObjects(List<Visible> viewObjects);
@@ -40,9 +39,10 @@ public abstract class ClickableScreen extends Screen implements MouseListener
 
 	public void mouseClicked(MouseEvent m) 
 	{
-		for(Clickable c: clickables)
+		for(int i = 0; i< clickables.size();i++)
 		{
-			if(c.isHovered(m.getX(), m.getY()))
+			Clickable c = clickables.get(i);
+			if(c.isHovered(m.getX(),m.getY()))
 			{
 				c.act();
 				break;
