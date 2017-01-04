@@ -10,6 +10,7 @@ import GUIPractice.Screen;
 import GUIPractice.components.Action;
 import GUIPractice.components.Button;
 import GUIPractice.components.Graphic;
+import GUIPractice.components.MovingComponent;
 import GUIPractice.components.TextArea;
 import GUIPractice.components.TextLabel;
 import GUIPractice.components.Visible;
@@ -39,11 +40,16 @@ public class CoordinateScreen extends Screen implements MouseMotionListener,Mous
 			}
 		});
 		Graphic picture = new Graphic(50,50,.5,"resources/sampleImages/gnar.jpg");
+		
 		viewObjects.add(picture);
 		viewObjects.add(label);
 		viewObjects.add(paragraph);
 		viewObjects.add(button);
 		
+		MovingComponent mc = new MovingComponent(30,60,80,80);
+		viewObjects.add(mc);
+		mc.setVy(3);
+		mc.play();
 	}
 	@Override
 	public void mouseDragged(MouseEvent arg0) 
