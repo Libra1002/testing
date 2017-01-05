@@ -95,8 +95,7 @@ public class whackAMoleScreen extends ClickableScreen implements Runnable
 		{
 			final moleInterface mole = getAMole();
 			//between .5 and 2.5 seconds
-			mole.setAppearanceTime((int)(500 
-					+ Math.random() * 2000));
+			mole.setAppearanceTime((int)(500 + Math.random() * 2000));
 			mole.setAction(new Action()
 			{
 				public void act()

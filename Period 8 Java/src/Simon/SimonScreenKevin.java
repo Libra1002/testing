@@ -1,5 +1,6 @@
 package Simon;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,11 +49,16 @@ public class SimonScreenKevin extends ClickableScreen implements Runnable
 		viewObjects.add(label);
 	}
 
-	private Object randomMove() 
+	private MoveInterfaceKevin randomMove() 
 	{
-		Button b;
-		
-		return getMove(b);
+		ButtonInterfaceKevin b;
+		int selectedButton = (int)(Math.random()*buttons.length);
+		while (selectedButton == lastSelectedButton)
+		{
+			selectedButton = (int)(Math.random()*buttons.length);
+		}
+		lastSelectedButton = selectedButton;
+		return null;
 	}
 
 	private ProgressInterfaceKevin getProgress() 
@@ -63,7 +69,20 @@ public class SimonScreenKevin extends ClickableScreen implements Runnable
 
 	private void addButtons() 
 	{
+		int numberOfButtons = 6;
+		Color[] colors = {Color.red,Color.magenta,Color.blue,Color.green,Color.yellow,Color.orange};
+		for(int i = 0; i < numberOfButtons;i++)
+		{
+			ButtonInterfaceKevin b = getAButton();
+			b.setColor(colors[i]);
+			
+		}
+	}
+
+	private ButtonInterfaceKevin getAButton() 
+	{
 		
+		return null;
 	}
 
 	@Override
