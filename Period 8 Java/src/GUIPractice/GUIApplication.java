@@ -7,10 +7,6 @@ import javax.swing.JFrame;
 public abstract class GUIApplication extends JFrame implements Runnable{
 
 	private Screen currentScreen;
-
-	
-	
-	
 	
 	public GUIApplication() {
 		//terminate program when window is closed
@@ -24,8 +20,6 @@ public abstract class GUIApplication extends JFrame implements Runnable{
 		initScreen();
 		setVisible(true);
 	}
-
-
 
 /**
  * method for creating and setting the starting screen
