@@ -1,4 +1,4 @@
-package GUIPractice.sampleGames;
+package GUIPractice;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -8,7 +8,6 @@ import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import GUIPractice.Screen;
 import GUIPractice.components.Clickable;
 import GUIPractice.components.Visible;
 
