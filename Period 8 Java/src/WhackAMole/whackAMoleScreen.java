@@ -3,8 +3,8 @@ package WhackAMole;
 import java.util.ArrayList;
 import java.util.List;
 
-import GUIPractice.ClickableScreen;
 import GUIPractice.components.Action;
+import GUIPractice.components.ClickableScreen;
 import GUIPractice.components.TextLabel;
 import GUIPractice.components.Visible;
 
