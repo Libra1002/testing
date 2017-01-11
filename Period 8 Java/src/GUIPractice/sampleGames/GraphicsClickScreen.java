@@ -26,7 +26,7 @@ public class GraphicsClickScreen extends Screen implements MouseListener
 				{
 					public void act()
 					{
-						picture.setX(picture.getX() + 10);
+						//picture.setX(picture.getX() + 10);
 					}
 				});
 		viewObjects.add(picture);

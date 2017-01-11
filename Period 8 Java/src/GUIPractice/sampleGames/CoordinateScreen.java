@@ -1,13 +1,18 @@
 package GUIPractice.sampleGames;
 
 import java.awt.Color;
+import java.awt.Graphics2D;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
+
+import javax.swing.ImageIcon;
 
 import GUIPractice.Screen;
 import GUIPractice.components.Action;
+import GUIPractice.components.AnimatedComponent;
 import GUIPractice.components.Button;
 import GUIPractice.components.Graphic;
 import GUIPractice.components.MovingComponent;
@@ -46,10 +51,12 @@ public class CoordinateScreen extends Screen implements MouseMotionListener,Mous
 		viewObjects.add(paragraph);
 		viewObjects.add(button);
 		
-		MovingComponent mc = new MovingComponent(30,60,80,80);
+		MovingComponent mc = new AnimatedComponent(30,60,80,80);
 		viewObjects.add(mc);
 		mc.setVy(3);
 		mc.play();
+
+		addAnimation(viewObjects);
 	}
 	@Override
 	public void mouseDragged(MouseEvent arg0) 
@@ -76,6 +83,36 @@ public class CoordinateScreen extends Screen implements MouseMotionListener,Mous
 		{
 			button.act();
 		}
+	}
+	private void addAnimation(ArrayList<Visible> viewObjects)
+	{
+		AnimatedComponent a = new AnimatedComponent(40,50,150,150);
+		try
+		{
+			int numberInRow = 9;
+			int rows = 1;
+			int w = 80;
+			int h = 100;
+			ImageIcon icon = new ImageIcon("resources/sampleImages/IceKirbyWalkSprite.png");
+			for(int i = 0; i < numberInRow * rows; i++)
+			{
+				//declare the cropped image
+				BufferedImage cropped = new BufferedImage(w,h,BufferedImage.TYPE_INT_ARGB);
+				int leftMargin = 0;
+				int topMargin = 0;
+				int x1 = leftMargin + w*(i%numberInRow);
+				int y1 = topMargin + h*(i/numberInRow);
+				Graphics2D g = cropped.createGraphics();
+				g.drawImage(icon.getImage(),0,0,w,h,x1,y1,x1+w,y1+h,null);
+				a.addFrame(cropped,20);
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		viewObjects.add(a);
+		a.play();
 	}
 	@Override
 	public void mouseEntered(MouseEvent arg0) 
