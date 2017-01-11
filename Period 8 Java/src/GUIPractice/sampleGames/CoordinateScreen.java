@@ -86,13 +86,13 @@ public class CoordinateScreen extends Screen implements MouseMotionListener,Mous
 	}
 	private void addAnimation(ArrayList<Visible> viewObjects)
 	{
-		AnimatedComponent a = new AnimatedComponent(40,50,150,150);
+		AnimatedComponent a = new AnimatedComponent(40,50,300,300);
 		try
 		{
 			int numberInRow = 9;
 			int rows = 1;
-			int w = 80;
-			int h = 100;
+			int w = 35;
+			int h = 35;
 			ImageIcon icon = new ImageIcon("resources/sampleImages/IceKirbyWalkSprite.png");
 			for(int i = 0; i < numberInRow * rows; i++)
 			{
@@ -104,7 +104,7 @@ public class CoordinateScreen extends Screen implements MouseMotionListener,Mous
 				int y1 = topMargin + h*(i/numberInRow);
 				Graphics2D g = cropped.createGraphics();
 				g.drawImage(icon.getImage(),0,0,w,h,x1,y1,x1+w,y1+h,null);
-				a.addFrame(cropped,20);
+				a.addFrame(cropped,100);
 			}
 		}
 		catch (Exception e)
